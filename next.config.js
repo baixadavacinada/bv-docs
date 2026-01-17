@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
+const basePath = "/bv-docs";
+
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/bv-docs" : "",
+  basePath: basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
   },

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Shield } from "lucide-react";
+import { OptimizedImage } from "../components/OptimizedImage";
 
 const docs = [
   {
@@ -26,7 +26,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
             >
-              <Image
+              <OptimizedImage
                 src="/criola-logo-branco.png"
                 alt="Logo Criola"
                 width={48}
@@ -171,7 +171,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:opacity-80 transition-opacity"
                 >
-                  <Image
+                  <OptimizedImage
                     src="/criola-logo-branco.png"
                     alt="Logo Criola"
                     width={48}
@@ -187,7 +187,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:opacity-80 transition-opacity"
                 >
-                  <Image
+                  <OptimizedImage
                     src="/reprograma_logo.png"
                     alt="Logo Reprograma"
                     width={48}
@@ -202,7 +202,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="flex items-center hover:opacity-80 transition-opacity"
                 >
-                  <Image
+                  <OptimizedImage
                     src="/logo-paula.png"
                     alt="Logo Paula Allemand"
                     width={100}
