@@ -7,11 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#2563eb",
-        secondary: "#14b8a6",
+        primary: "#4C2E97",
+        "primary-foreground": "#FFFFFF",
+        success: "#50C36E",
+        alert: "#FC6E04",
+        warning: "#ECAD00",
       },
       fontFamily: {
-        sans: ["system-ui", "sans-serif"],
+        sans: ["system-ui", "-apple-system", "sans-serif"],
       },
     },
   },

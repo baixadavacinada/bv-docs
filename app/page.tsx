@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { FileText, Shield, BookOpen } from "lucide-react";
+import Image from "next/image";
+import { Shield } from "lucide-react";
 
 const docs = [
   {
     id: "accessibility",
     title: "Relatório de Acessibilidade",
     description:
-      "Audit de acessibilidade WCAG 2.1 AA e implementações realizadas",
+      "Auditoria WCAG 2.1 AA com implementações realizadas e 15 melhorias em janeiro de 2026",
     icon: Shield,
     href: "/docs/accessibility",
   },
@@ -14,54 +15,76 @@ const docs = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-primary text-primary-foreground border-b border-primary/20">
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center">
-              <BookOpen className="text-white" size={24} />
+          <div className="flex items-center gap-4 mb-6">
+            <a
+              href="https://criola.org.br/?doing_wp_cron=1768672138.0074019432067871093750"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src="/criola-logo-branco.png"
+                alt="Logo Criola"
+                width={48}
+                height={48}
+                className="object-contain"
+                priority
+              />
+            </a>
+            <div>
+              <h1 className="text-3xl font-bold text-white">
+                Baixada Vacinada
+              </h1>
+              <p className="text-primary-foreground/80 text-sm">
+                Documentação Técnica
+              </p>
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-              Baixada Vacinada
-            </h1>
           </div>
-          <p className="text-gray-600 text-lg">Documentação Técnica</p>
+          <p className="text-primary-foreground/90">
+            Plataforma de vacinação comunitária com foco em acessibilidade
+            digital
+          </p>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-6xl mx-auto px-4 py-12 w-full">
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-2 text-gray-900">
+      <main className="flex-1 max-w-6xl mx-auto px-4 py-16 w-full">
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">
             Documentações
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-lg text-gray-600">
             Acesse a documentação completa do projeto, incluindo guias técnicos,
             relatórios de auditoria e especificações.
           </p>
         </div>
 
         {/* Docs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {docs.map((doc) => {
             const IconComponent = doc.icon;
             return (
               <Link
                 key={doc.id}
                 href={doc.href}
-                className="group bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all"
+                className="group bg-white rounded-lg border border-gray-200 p-8 hover:shadow-xl hover:border-primary/40 transition-all duration-300"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
-                    <IconComponent className="text-blue-600" size={24} />
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                    <IconComponent className="text-primary" size={28} />
                   </div>
-                  <h3 className="font-semibold text-lg text-gray-900">
+                  <h3 className="font-semibold text-xl text-gray-900 group-hover:text-primary transition-colors">
                     {doc.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 text-sm">{doc.description}</p>
-                <div className="mt-4 flex items-center text-blue-600 font-medium text-sm group-hover:gap-2 transition-all gap-0">
+                <p className="text-gray-600 text-base leading-relaxed mb-6">
+                  {doc.description}
+                </p>
+                <div className="flex items-center text-primary font-semibold text-base group-hover:gap-2 transition-all gap-0">
                   Acessar <span className="ml-1">→</span>
                 </div>
               </Link>
@@ -71,28 +94,33 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 border-t border-gray-800">
+      <footer className="bg-primary text-primary-foreground border-t border-primary/20 mt-20">
         <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h3 className="text-white font-semibold mb-3">Projeto</h3>
-              <p className="text-sm text-gray-400">
+              <h3 className="font-bold mb-4 text-lg text-white">Projeto</h3>
+              <p className="text-sm text-white/90">
                 Plataforma open-source de vacinação comunitária com foco em
                 acessibilidade digital.
               </p>
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-3">Documentação</h3>
-              <ul className="text-sm text-gray-400 space-y-2">
+              <h3 className="font-bold mb-4 text-lg text-white">
+                Documentação
+              </h3>
+              <ul className="text-sm text-white/90 space-y-2">
                 <li>
-                  <Link href="/" className="hover:text-white transition-colors">
+                  <Link
+                    href="/"
+                    className="hover:text-white hover:underline transition-colors text-white"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/docs/accessibility"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white hover:underline transition-colors text-white"
                   >
                     Acessibilidade
                   </Link>
@@ -100,14 +128,16 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-3">Repositórios</h3>
-              <ul className="text-sm text-gray-400 space-y-2">
+              <h3 className="font-bold mb-4 text-lg text-white">
+                Repositórios
+              </h3>
+              <ul className="text-sm text-white/90 space-y-2 text-white">
                 <li>
                   <a
                     href="https://github.com/baixadavacinada"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white hover:underline transition-colors text-white"
                   >
                     GitHub
                   </a>
@@ -117,7 +147,7 @@ export default function Home() {
                     href="https://github.com/baixadavacinada/bv-frontend"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white hover:underline transition-colors text-white"
                   >
                     Frontend
                   </a>
@@ -126,21 +156,63 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
-            <div className="text-xs text-gray-500 space-y-2">
-              <p>
-                <strong>Autor:</strong> Paula Allemand
-              </p>
-              <p>
-                <strong>Documentação criada em:</strong> Janeiro 17, 2026
-              </p>
-              <p>
-                <strong>Última atualização:</strong> Janeiro 17, 2026
-              </p>
-              <p className="pt-2">
-                Este projeto é open-source e mantido com propósito comunitário
-                de saúde pública.
-              </p>
+          <div className="border-t border-primary/20 pt-8 text-sm text-white/90">
+            <p className="mb-6 text-white">
+              Este projeto é open-source e mantido com propósito comunitário de
+              saúde pública.
+            </p>
+
+            {/* Realizado por */}
+            <div className="border-t border-primary/20 pt-6">
+              <h4 className="font-bold mb-4">Realizado por</h4>
+              <div className="flex items-center justify-start gap-8 flex-wrap">
+                <a
+                  href="https://criola.org.br/?doing_wp_cron=1768672138.0074019432067871093750"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/criola-logo-branco.png"
+                    alt="Logo Criola"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                  <span className="text-sm text-white">Criola</span>
+                </a>
+                <div className="text-primary/40">×</div>
+                <a
+                  href="https://reprograma.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/reprograma_logo.png"
+                    alt="Logo Reprograma"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                  <span className="text-sm text-white">Reprograma</span>
+                </a>
+                <a
+                  href="https://paulaisdev.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src="/logo-paula.png"
+                    alt="Logo Paula Allemand"
+                    width={100}
+                    height={100}
+                    className="object-contain"
+                  />
+                  <span className="text-sm text-white">Paula Allemand</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
