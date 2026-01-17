@@ -104,8 +104,8 @@ export default function Home() {
             <div>
               <h3 className="font-bold mb-4 text-lg text-white">Projeto</h3>
               <p className="text-sm text-white/90">
-                Plataforma open-source de vacinação comunitária com foco em
-                acessibilidade digital.
+                Plataforma open-source de vacinação com foco em acessibilidade
+                digital.
               </p>
             </div>
             <div>
