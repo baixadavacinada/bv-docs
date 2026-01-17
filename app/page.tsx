@@ -18,7 +18,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <header className="bg-primary text-primary-foreground border-b border-primary/20">
-        <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto px-4 py-10">
           <div className="flex items-center gap-4 mb-6">
             <a
               href="https://criola.org.br/?doing_wp_cron=1768672138.0074019432067871093750"
@@ -96,6 +96,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground border-t border-primary/20 mt-20">
         <div className="max-w-6xl mx-auto px-4 py-12">
+          <p className="mb-20 text-white">
+            Este projeto é open-source e mantido com propósito comunitário de
+            saúde pública.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
               <h3 className="font-bold mb-4 text-lg text-white">Projeto</h3>
@@ -157,11 +161,6 @@ export default function Home() {
           </div>
 
           <div className="border-t border-primary/20 pt-8 text-sm text-white/90">
-            <p className="mb-6 text-white">
-              Este projeto é open-source e mantido com propósito comunitário de
-              saúde pública.
-            </p>
-
             {/* Realizado por */}
             <div className="border-t border-primary/20 pt-6">
               <h4 className="font-bold mb-4">Realizado por</h4>
